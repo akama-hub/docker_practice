@@ -1,0 +1,20 @@
+version: "3.4"
+
+services:
+    node:
+        build:
+            context: ./
+            dockerfile: "Dockerfile"
+            target: base
+        ports:
+            - "4200:4200"
+        command: sh -c "ng serve --host 0.0.0.0 --poll=1000"
+        volumes:
+            - .:/portfolio
+            - node_modules:/portfolio/node_modules
+        tty: true
+volumes:
+    node_modules:
+        driver: "local"
+
+
