@@ -1,8 +1,9 @@
 ### ベースステージ ###
-FROM node:lts-alpine as base
+FROM node:18.17.0
+
 
 # @angular/cliをグローバルインストール
-RUN npm install -g @angular/cli@16.2.6
+RUN npm install -g @angular/cli@16.2.0
 
 # ワーキングディレクトリの設定
 WORKDIR /portfolio
