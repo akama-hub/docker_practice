@@ -3,8 +3,9 @@
     display: grid;
     width: 100vw;
     /* 比率で画面の分割を行う */
-    /* grid-template-columns: 2fr 3fr 1fr;  */
-    grid-template-rows: 140px 500px 500px 120px;
+    grid-template-columns: 2fr 3fr 1fr; 
+    /* grid-template-rows: 140px 500px 500px 120px; */
+    grid-template-rows: 500px 500px 120px;
     /* block 要素の中央ぞろえ */
     margin: 0 auto;
     /* 縦方向のスペース　横方向のスペース */
@@ -17,10 +18,12 @@
     color: #FFFFFF;
     font-size: 36px;
     text-align: center;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .skill{
     display: grid;
+    margin-top: 70px;
     grid-template-columns: 2fr 3fr 1fr;
     grid-template-rows: 170px 300px;
     gap: 30px 20px;
@@ -45,6 +48,7 @@
 
 .history{
     display: grid;
+    margin-top: 70px;
     grid-template-columns: 2fr 3fr 2fr; 
     grid-template-rows: 170px 300px;
     gap: 30px 20px;
@@ -84,6 +88,7 @@
 }
 
 .footer {
+    margin-top: 70px;
     grid-column: 1 / 4;
     background-color: #000000;
     color: #FFFFFF;

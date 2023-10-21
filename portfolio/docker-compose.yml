@@ -13,6 +13,7 @@ services:
             - .:/portfolio
             - node_modules:/portfolio/node_modules
         tty: true
+        user: "${UID_GID}"
 volumes:
     node_modules:
         driver: "local"

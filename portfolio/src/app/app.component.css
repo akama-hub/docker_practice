@@ -1,0 +1,127 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
+    z-index: 1;
+    opacity: 80%;
+    background-color: black;
+    display: flex;;
+}
+
+.header h1 {
+    color: bisque;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 25px;
+    padding: 10px 0 10px 10px;
+    width: 100%;
+}
+
+.hamburger-menu {
+    position: relative;
+}
+
+.menu-btn {
+    /* 親要素（ハンバーガー）に対して固定位置 */
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    height: 35px;
+    width: 40px;
+    /* 中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+/* 疑似要素 */
+.menu-btn span, .menu-btn span::before, .menu-btn span::after {
+    /* 中身を入れ替える。この場合はチェックボックスを空にする */
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    /* 先端を丸める */
+    border-radius: 3px;
+    background-color: bisque;
+    position: absolute;
+}
+
+/* 三本戦の一番下の線 */
+.menu-btn span::before {
+    bottom: 8px
+}
+
+/* 三本戦の一番上の線 */
+.menu-btn span::after {
+    top: 8px
+}
+
+/* idの時は#をつける */
+#menu-btn-check:checked + .menu-btn span {
+    background-color: rgb(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked + .menu-btn span::before {
+    top: 7px;
+    transform: rotate(45deg);
+}
+
+#menu-btn-check:checked + .menu-btn span::after {
+    bottom: 7px;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 4;
+    background-color: rgb(90, 105, 48);
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 50%;
+}
+
+.menu-content ul {
+    padding-top:  50px;
+}
+
+.menu-content ul li {
+    list-style: none;
+}
+
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: bisque;
+    text-decoration: none;
+    padding: 3px 0 5px 0px;
+}
+
+.menu-content ul li a:hover {
+    background-color: black;
+}
+
+#menu-btn-check:checked ~ .menu-content ul li a:hover {
+    left: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
